@@ -1,0 +1,35 @@
+{
+  "name": "test-reviews-app",
+  "version": "1.0.0",
+  "description": "mern-app",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "client:install": "npm install --prefix client",
+    "client:build": "npm run build --prefix client",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shapoval-Sergey/test-reviews-app.git"
+  },
+  "author": "Sergey Shapoval (shapa92sergey@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shapoval-Sergey/test-reviews-app/issues"
+  },
+  "homepage": "https://github.com/Shapoval-Sergey/test-reviews-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "mongoose": "^5.12.9"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nodemon": "^2.0.7"
+  }
+}
