@@ -10,7 +10,7 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/")
+      .get("https://radiant-tundra-36046.herokuapp.com/")
       .then(({ data }) => {
         setReviews(data);
       })
