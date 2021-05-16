@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px dashed blue",
     marginLeft: "10px",
     marginBottom: "10px",
-    minWidth: "300px",
+    width: "900px",
   },
 }));
 
