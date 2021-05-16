@@ -7,7 +7,7 @@ const reviewsService = new ReviewsService();
 
 const createReview = async (req, res, next) => {
   const { body } = req;
-  console.log(body);
+
   try {
     const result = await reviewsService.createNewReview(body);
     res.status(HttpCode.CREATED).json(result);

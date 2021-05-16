@@ -32,10 +32,13 @@ export default function ReviewForm() {
         return;
       }
 
-      axios
-        .post("https://radiant-tundra-36046.herokuapp.com/", { name, descr })
-        .then((data) => data)
-        .catch((e) => console.log(e.message));
+      axios.post("https://radiant-tundra-36046.herokuapp.com/api/", {
+        name,
+        descr,
+      });
+
+      setName("");
+      setDescr("");
     },
     [name, descr],
   );

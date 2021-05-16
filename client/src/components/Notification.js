@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Alert, AlertTitle } from "@material-ui/lab";
+import Alert from "@material-ui/lab/Alert";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,27 +11,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function SuccessPost() {
+export default function SimpleAlerts() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Alert severity="success">
-        <AlertTitle>Success</AlertTitle>
         Your review has been sent successfully !!!
-      </Alert>
-    </div>
-  );
-}
-
-export function ErrorPost(message) {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <Alert severity="error">
-        <AlertTitle>Error</AlertTitle>
-        {message}
       </Alert>
     </div>
   );

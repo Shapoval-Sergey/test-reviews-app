@@ -15,7 +15,7 @@ class ReviewsRepo {
   }
 
   getReviews() {
-    return this.model.find({});
+    return this.model.find({}).sort({ datefield: -1 });
   }
 }
 

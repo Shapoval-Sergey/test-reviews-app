@@ -10,12 +10,12 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get("https://radiant-tundra-36046.herokuapp.com/")
+      .get("https://radiant-tundra-36046.herokuapp.com/api/")
       .then(({ data }) => {
         setReviews(data);
       })
       .catch((e) => console.log(e));
-  }, [setReviews]);
+  }, [setReviews, reviews]);
 
   return (
     <Suspense fallback={<Loader />}>
