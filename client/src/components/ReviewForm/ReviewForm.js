@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 
@@ -34,46 +34,46 @@ export default function ReviewForm() {
 
       axios
         .post("http://localhost:5000/api/", { name, descr })
-
         .then((data) => data)
-        .catch((e) => console.log(e));
+        .catch((e) => console.log(e.message));
     },
     [name, descr],
   );
 
-  // useEffect(() => {
-  //   window.M.updateTextFields();
-  // }, []);
-
   return (
-    <form onSubmit={handleSubmit} className={s.form}>
-      <label className={s.label}>
-        Name:
-        <input
-          className={!errorName ? s.input : s.error}
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleChangeName}
-          placeholder="Enter name"
-        />
-      </label>
-      <label className={s.label}>
-        Description:
-        <input
-          className={!errorDescr ? s.input : s.error}
-          type="text"
-          name="descr"
-          value={descr}
-          onChange={handleChangeDescr}
-          placeholder="Enter description"
-        ></input>
-      </label>
+    <>
+      <h1 className={s.title}>Leave your review here:</h1>
+      <form onSubmit={handleSubmit} className={s.form}>
+        <label className={s.label}>
+          Name:
+          <input
+            className={!errorName ? s.input : s.error}
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChangeName}
+            placeholder="Enter name"
+          />
+        </label>
+        <label className={s.label}>
+          Description:
+          <textarea
+            rows="5"
+            cols="33"
+            className={!errorDescr ? s.textarea : s.error}
+            type="text"
+            name="descr"
+            value={descr}
+            onChange={handleChangeDescr}
+            placeholder="Enter description"
+          ></textarea>
+        </label>
 
-      <button type="submit" className={s.btn}>
-        Add contact
-      </button>
-    </form>
+        <button type="submit" className={s.btn}>
+          Add review
+        </button>
+      </form>
+    </>
   );
 }
 
