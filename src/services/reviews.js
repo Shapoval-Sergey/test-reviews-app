@@ -11,17 +11,19 @@ class ReviewsService {
 
   async getReviews() {
     try {
-    } catch (error) {}
+      const result = await this.repositories.review.getReviews();
+      return result;
+    } catch (e) {
+      next(e);
+    }
   }
 
-  async getReview() {
-    try {
-    } catch (error) {}
-  }
-
-  async createReview() {
-    try {
-    } catch (error) {}
+  async createReview({ name, descr }) {
+    const newProject = await this.repositories.review.createNewReview({
+      name,
+      descr,
+    });
+    return newProject;
   }
 }
 

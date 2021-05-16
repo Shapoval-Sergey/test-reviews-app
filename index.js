@@ -1,6 +1,5 @@
 const app = require("./src/app");
 const db = require("./src/db");
-const config = require("./src/config/config.json");
 
 const PORT = process.env.PORT || 3001;
 

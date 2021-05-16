@@ -2,12 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const { HttpCode } = require("./helpers/constants");
+const reviewsRouter = require("./api/reviews");
 
 app.use(cors());
 app.use(express.json({ extended: true }));
 
-// app.use("/api/auth", routerAuth);
-// app.use("/api/projects", projectsRouter);
+app.use("/api", reviewsRouter);
 
 app.use((req, res, next) => {
   res.status(HttpCode.NOT_FOUND).json({

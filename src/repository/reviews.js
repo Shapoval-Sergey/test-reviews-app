@@ -1,3 +1,5 @@
+"use strict";
+
 const Review = require("../schemas/review");
 
 class ReviewsRepo {
@@ -12,10 +14,8 @@ class ReviewsRepo {
     }).save();
   }
 
-  getReviews() {}
-
-  getReview(id) {
-    return this.model.findById({ _id: id });
+  getReviews() {
+    return this.model.find({});
   }
 }
 

@@ -5,23 +5,29 @@ const { HttpCode } = require("../helpers/constants");
 
 const reviewsService = new ReviewsService();
 
-const createReview = async () => {
+const createReview = async (req, res, next) => {
+  const { body } = req;
+  console.log(body);
   try {
-  } catch (error) {}
+    const result = await reviewsService.createNewReview(body);
+    res.status(HttpCode.CREATED).json(result);
+  } catch (e) {
+    console.log(e);
+    next(e);
+  }
 };
 
-const fetchReviews = async () => {
+const fetchReviews = async (req, res, next) => {
   try {
-  } catch (error) {}
-};
-
-const getReview = async () => {
-  try {
-  } catch (error) {}
+    const result = await reviewsService.getReviews();
+    res.status(HttpCode.OK).json(result);
+  } catch (e) {
+    console.log(e);
+    next(e);
+  }
 };
 
 module.exports = {
   createReview,
   fetchReviews,
-  getReview,
 };
