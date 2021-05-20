@@ -9,9 +9,9 @@ class ReviewsService {
     };
   }
 
-  async getReviews() {
+  async fetchReviews() {
     try {
-      const result = await this.repositories.review.getReviews();
+      const result = await this.repositories.review.fetchReviews();
       return result;
     } catch (e) {
       next(e);
@@ -27,4 +27,4 @@ class ReviewsService {
   }
 }
 
-module.exports = ReviewsRepo;
+module.exports = ReviewsService;

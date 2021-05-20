@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 
@@ -7,8 +7,6 @@ import s from "./ReviewForm.module.css";
 export default function ReviewForm() {
   const [name, setName] = useState("");
   const [descr, setDescr] = useState("");
-  const [errorName, setErrorName] = useState("");
-  const [errorDescr, setErrorDescr] = useState("");
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -18,44 +16,44 @@ export default function ReviewForm() {
     setDescr(e.currentTarget.value);
   };
 
-  const handleSubmit = useCallback(
-    async (e) => {
-      e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      if (name === "") {
-        setErrorName(true);
-        return;
-      }
+    await axios.post("http://localhost:5000/api/", {
+      name,
+      descr,
+    });
 
-      if (descr === "") {
-        setErrorDescr(true);
-        return;
-      }
+    setDescr("");
+  };
 
-      axios.post("https://radiant-tundra-36046.herokuapp.com/api/", {
+  const onSend = async (e) => {
+    e = e || window.event;
+    if (e.keyCode === 13 && e.ctrlKey) {
+      await axios.post("http://localhost:5000/api/", {
         name,
         descr,
       });
 
-      setName("");
       setDescr("");
-    },
-    [name, descr],
-  );
+    }
+  };
 
   return (
-    <>
+    <div>
       <h1 className={s.title}>Leave your review here:</h1>
       <form onSubmit={handleSubmit} className={s.form}>
         <label className={s.label}>
           Name:
           <input
-            className={!errorName ? s.input : s.error}
+            className={s.input}
             type="text"
             name="name"
             value={name}
             onChange={handleChangeName}
             placeholder="Enter name"
+            minLength="2"
+            maxLength="30"
           />
         </label>
         <label className={s.label}>
@@ -63,12 +61,13 @@ export default function ReviewForm() {
           <textarea
             rows="5"
             cols="33"
-            className={!errorDescr ? s.textarea : s.error}
+            className={s.textarea}
             type="text"
             name="descr"
             value={descr}
             onChange={handleChangeDescr}
             placeholder="Enter description"
+            onKeyDown={onSend}
           ></textarea>
         </label>
 
@@ -76,7 +75,7 @@ export default function ReviewForm() {
           Add review
         </button>
       </form>
-    </>
+    </div>
   );
 }
 

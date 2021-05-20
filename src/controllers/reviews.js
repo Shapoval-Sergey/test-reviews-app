@@ -9,8 +9,15 @@ const createReview = async (req, res, next) => {
   const { body } = req;
 
   try {
-    const result = await reviewsService.createNewReview(body);
-    res.status(HttpCode.CREATED).json(result);
+    const review = await reviewsService.createReview(body);
+
+    if (review) {
+      return res.status(HttpCode.OK).json({
+        status: "success",
+        code: HttpCode.OK,
+        review,
+      });
+    }
   } catch (e) {
     console.log(e);
     next(e);
@@ -19,15 +26,28 @@ const createReview = async (req, res, next) => {
 
 const fetchReviews = async (req, res, next) => {
   try {
-    const result = await reviewsService.getReviews();
-    res.status(HttpCode.OK).json(result);
+    const reviews = await reviewsService.fetchReviews();
+    res.status(HttpCode.OK).json(reviews);
   } catch (e) {
     console.log(e);
     next(e);
   }
 };
 
+// const getReview = async (req, res, next) => {
+//   try {
+//     const review = await reviewsService.createReview(body);
+//     const currentReview = await reviewsService.getReviewById(review._id);
+//     const reviews = await reviewsService.fetchReviews();
+//     res.status(HttpCode.OK).json(reviews);
+//   } catch (e) {
+//     console.log(e);
+//     next(e);
+//   }
+// };
+
 module.exports = {
   createReview,
   fetchReviews,
+  // getReview,
 };

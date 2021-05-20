@@ -14,9 +14,13 @@ class ReviewsRepo {
     }).save();
   }
 
-  getReviews() {
-    return this.model.find({}).sort({ datefield: -1 });
+  fetchReviews() {
+    return this.model.find().sort({ createdAt: -1 });
   }
+
+  // getReview(id) {
+  //   return this.model.findById({ _id: id });
+  // }
 }
 
 module.exports = ReviewsRepo;
