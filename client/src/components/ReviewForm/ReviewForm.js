@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import s from "./ReviewForm.module.css";
 
-export default function ReviewForm() {
+export default function ReviewForm({ getData }) {
   const [name, setName] = useState("");
   const [descr, setDescr] = useState("");
 
@@ -24,6 +24,7 @@ export default function ReviewForm() {
       descr,
     });
 
+    getData();
     setDescr("");
   };
 
@@ -34,7 +35,7 @@ export default function ReviewForm() {
         name,
         descr,
       });
-
+      getData();
       setDescr("");
     }
   };

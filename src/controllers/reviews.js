@@ -12,9 +12,9 @@ const createReview = async (req, res, next) => {
     const review = await reviewsService.createReview(body);
 
     if (review) {
-      return res.status(HttpCode.OK).json({
+      return res.status(HttpCode.CREATED).json({
         status: "success",
-        code: HttpCode.OK,
+        code: HttpCode.CREATED,
         review,
       });
     }
@@ -27,7 +27,11 @@ const createReview = async (req, res, next) => {
 const fetchReviews = async (req, res, next) => {
   try {
     const reviews = await reviewsService.fetchReviews();
-    res.status(HttpCode.OK).json(reviews);
+    return res.status(HttpCode.OK).json({
+      status: "success",
+      code: HttpCode.OK,
+      reviews,
+    });
   } catch (e) {
     console.log(e);
     next(e);

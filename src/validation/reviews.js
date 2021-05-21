@@ -2,7 +2,7 @@ const Joi = require("joi");
 const { HttpCode } = require("../helpers/constants");
 
 const schemaCreateReview = Joi.object({
-  name: Joi.string().alphanum().min(2).max(30).required(),
+  name: Joi.string().alphanum().min(3).max(30).required(),
 
   descr: Joi.string().alphanum().min(10).max(300).required(),
 });
