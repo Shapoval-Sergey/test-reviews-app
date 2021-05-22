@@ -14,7 +14,7 @@ class ReviewsService {
       const result = await this.repositories.review.fetchReviews();
       return result;
     } catch (e) {
-      next(e);
+      next(e.message);
     }
   }
 

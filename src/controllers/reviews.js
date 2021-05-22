@@ -19,8 +19,8 @@ const createReview = async (req, res, next) => {
       });
     }
   } catch (e) {
-    console.log(e);
-    next(e);
+    console.log(e.message);
+    next(e.message);
   }
 };
 
@@ -33,25 +33,12 @@ const fetchReviews = async (req, res, next) => {
       reviews,
     });
   } catch (e) {
-    console.log(e);
-    next(e);
+    console.log(e.message);
+    next(e.message);
   }
 };
-
-// const getReview = async (req, res, next) => {
-//   try {
-//     const review = await reviewsService.createReview(body);
-//     const currentReview = await reviewsService.getReviewById(review._id);
-//     const reviews = await reviewsService.fetchReviews();
-//     res.status(HttpCode.OK).json(reviews);
-//   } catch (e) {
-//     console.log(e);
-//     next(e);
-//   }
-// };
 
 module.exports = {
   createReview,
   fetchReviews,
-  // getReview,
 };

@@ -2,9 +2,17 @@ const Joi = require("joi");
 const { HttpCode } = require("../helpers/constants");
 
 const schemaCreateReview = Joi.object({
-  name: Joi.string().alphanum().min(3).max(30).required(),
+  name: Joi.string()
+    .regex(/^[a-zA-Z ]+$/)
+    .min(3)
+    .max(30)
+    .required(),
 
-  descr: Joi.string().alphanum().min(10).max(300).required(),
+  descr: Joi.string()
+    .regex(/^[a-zA-Z0-9,. ]*$/)
+    .min(6)
+    .max(300)
+    .required(),
 });
 
 const validate = (schema, body, next) => {
