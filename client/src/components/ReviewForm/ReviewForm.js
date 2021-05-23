@@ -73,6 +73,7 @@ export default function ReviewForm({ getData }) {
             placeholder="Enter name"
             minLength="3"
             maxLength="30"
+            pattern="^[a-zA-Z ]+$"
             required
           />
         </label>
@@ -90,6 +91,7 @@ export default function ReviewForm({ getData }) {
             onKeyDown={onSend}
             minLength="5"
             maxLength="200"
+            pattern="^[a-zA-Z0-9,. ]*$"
             required
           ></textarea>
         </label>

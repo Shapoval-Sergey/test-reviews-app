@@ -10,8 +10,8 @@ const schemaCreateReview = Joi.object({
 
   descr: Joi.string()
     .regex(/^[a-zA-Z0-9,. ]*$/)
-    .min(6)
-    .max(300)
+    .min(5)
+    .max(200)
     .required(),
 });
 
