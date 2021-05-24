@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/test-reviews-app/static/css/main.8bf771e1.chunk.css",
-    "main.js": "/test-reviews-app/static/js/main.c83a252f.chunk.js",
-    "main.js.map": "/test-reviews-app/static/js/main.c83a252f.chunk.js.map",
+    "main.css": "/test-reviews-app/static/css/main.5972dba6.chunk.css",
+    "main.js": "/test-reviews-app/static/js/main.7c6adee1.chunk.js",
+    "main.js.map": "/test-reviews-app/static/js/main.7c6adee1.chunk.js.map",
     "runtime-main.js": "/test-reviews-app/static/js/runtime-main.47f1058f.js",
     "runtime-main.js.map": "/test-reviews-app/static/js/runtime-main.47f1058f.js.map",
     "static/js/2.9dc333eb.chunk.js": "/test-reviews-app/static/js/2.9dc333eb.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.fe0d2301.chunk.js": "/test-reviews-app/static/js/3.fe0d2301.chunk.js",
     "static/js/3.fe0d2301.chunk.js.map": "/test-reviews-app/static/js/3.fe0d2301.chunk.js.map",
     "index.html": "/test-reviews-app/index.html",
-    "static/css/main.8bf771e1.chunk.css.map": "/test-reviews-app/static/css/main.8bf771e1.chunk.css.map",
+    "static/css/main.5972dba6.chunk.css.map": "/test-reviews-app/static/css/main.5972dba6.chunk.css.map",
     "static/js/2.9dc333eb.chunk.js.LICENSE.txt": "/test-reviews-app/static/js/2.9dc333eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.47f1058f.js",
     "static/js/2.9dc333eb.chunk.js",
-    "static/css/main.8bf771e1.chunk.css",
-    "static/js/main.c83a252f.chunk.js"
+    "static/css/main.5972dba6.chunk.css",
+    "static/js/main.7c6adee1.chunk.js"
   ]
 }
