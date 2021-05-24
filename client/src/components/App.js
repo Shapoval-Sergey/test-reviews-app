@@ -12,7 +12,7 @@ export default function App() {
   const fetchData = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/")
+      .get("https://radiant-tundra-36046.herokuapp.com/")
       .then(({ data }) => {
         setResponse(data.reviews);
       })
