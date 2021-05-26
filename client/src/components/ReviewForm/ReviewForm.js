@@ -24,7 +24,7 @@ export default function ReviewForm({ getData }) {
     e.preventDefault();
 
     await axios
-      .post("https://radiant-tundra-36046.herokuapp.com/", {
+      .post("https://radiant-tundra-36046.herokuapp.com/api", {
         name,
         descr,
       })

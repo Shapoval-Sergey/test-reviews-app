@@ -12,11 +12,12 @@ export default function App() {
   const fetchData = () => {
     setLoading(true);
     axios
-      .get("https://radiant-tundra-36046.herokuapp.com/")
+      .get("https://radiant-tundra-36046.herokuapp.com/api")
       .then(({ data }) => {
+        console.log(data);
         setResponse(data.reviews);
       })
-      .catch(() => {
+      .catch((e) => {
         setHasError(true);
       })
       .finally(() => setLoading(false));
