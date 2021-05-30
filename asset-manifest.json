@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/test-reviews-app/static/css/main.5972dba6.chunk.css",
-    "main.js": "/test-reviews-app/static/js/main.127e6517.chunk.js",
-    "main.js.map": "/test-reviews-app/static/js/main.127e6517.chunk.js.map",
+    "main.js": "/test-reviews-app/static/js/main.78112547.chunk.js",
+    "main.js.map": "/test-reviews-app/static/js/main.78112547.chunk.js.map",
     "runtime-main.js": "/test-reviews-app/static/js/runtime-main.47f1058f.js",
     "runtime-main.js.map": "/test-reviews-app/static/js/runtime-main.47f1058f.js.map",
     "static/js/2.9dc333eb.chunk.js": "/test-reviews-app/static/js/2.9dc333eb.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.47f1058f.js",
     "static/js/2.9dc333eb.chunk.js",
     "static/css/main.5972dba6.chunk.css",
-    "static/js/main.127e6517.chunk.js"
+    "static/js/main.78112547.chunk.js"
   ]
 }
