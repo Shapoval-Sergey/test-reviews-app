@@ -75,13 +75,12 @@ export default function ReviewForm({ getData }) {
             maxLength="30"
             pattern="^[a-zA-Z ]+$"
             required
+            onKeyDown={onSend}
           />
         </label>
         <label className={s.label}>
           Description:
-          <textarea
-            rows="5"
-            cols="33"
+          <input
             className={s.textarea}
             type="text"
             name="descr"
@@ -89,11 +88,10 @@ export default function ReviewForm({ getData }) {
             onChange={handleChangeDescr}
             placeholder="Enter description"
             onKeyDown={onSend}
-            minLength="5"
+            minLength="3"
             maxLength="200"
-            pattern="^[a-zA-Z0-9,. ]*$"
             required
-          ></textarea>
+          ></input>
         </label>
 
         <button type="submit" className={s.btn}>
