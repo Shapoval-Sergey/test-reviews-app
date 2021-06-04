@@ -33,7 +33,7 @@
   margin-right: auto;
 }
 
-input:required:invalid {
+.input:hover:required:invalid {
   border: 1px solid red;
 }
 
@@ -46,7 +46,7 @@ input:required:invalid {
   margin-right: auto;
 }
 
-textarea:required:invalid {
+.textarea:hover:required:invalid {
   border: 1px solid red;
 }
 

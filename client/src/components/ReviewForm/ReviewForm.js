@@ -6,7 +6,9 @@ import FlashMessage from "../Alerts";
 
 import s from "./ReviewForm.module.css";
 
-export default function ReviewForm({ getData }) {
+const baseUrl = "https://radiant-tundra-36046.herokuapp.com/api";
+
+export default function ReviewForm({ reviews, setReviews }) {
   const [name, setName] = useState("");
   const [descr, setDescr] = useState("");
   const [alert, setAlert] = useState(false);
@@ -24,17 +26,17 @@ export default function ReviewForm({ getData }) {
     e.preventDefault();
 
     await axios
-      .post("https://radiant-tundra-36046.herokuapp.com/api", {
+      .post(baseUrl, {
         name,
         descr,
       })
       .then(({ data }) => {
+        setReviews([data.currentReview, ...reviews]);
         setMessage(data.status);
         setAlert(true);
       })
       .catch((e) => setMessage(e.message));
 
-    getData();
     setDescr("");
   };
 
@@ -42,17 +44,17 @@ export default function ReviewForm({ getData }) {
     e = e || window.event;
     if (e.keyCode === 13 && e.ctrlKey) {
       await axios
-        .post("http://localhost:5000/api/", {
+        .post(baseUrl, {
           name,
           descr,
         })
         .then(({ data }) => {
-          console.log(data);
+          setReviews([data.currentReview, ...reviews]);
           setMessage(data.status);
           setAlert(true);
         })
         .catch((e) => setMessage(e.message));
-      getData();
+
       setDescr("");
     }
   };

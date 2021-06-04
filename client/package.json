@@ -32,7 +32,7 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://radiant-tundra-36046.herokuapp.com/",
+  "proxy": "https://radiant-tundra-36046.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",

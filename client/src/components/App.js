@@ -4,6 +4,8 @@ import axios from "axios";
 import ReviewsList from "./ReviewList/ReviewList";
 import ReviewForm from "./ReviewForm/ReviewForm";
 
+const baseUrl = "https://radiant-tundra-36046.herokuapp.com/api";
+
 export default function App() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -12,9 +14,8 @@ export default function App() {
   const fetchData = () => {
     setLoading(true);
     axios
-      .get("https://radiant-tundra-36046.herokuapp.com/api")
+      .get(baseUrl)
       .then(({ data }) => {
-        console.log(data);
         setResponse(data.reviews);
       })
       .catch((e) => {
@@ -29,7 +30,7 @@ export default function App() {
 
   return (
     <>
-      <ReviewForm getData={fetchData} />
+      <ReviewForm reviews={response} setReviews={setResponse} />
       <ReviewsList reviews={response} load={loading} hasError={hasError} />
     </>
   );

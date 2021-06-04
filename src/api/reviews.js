@@ -11,6 +11,4 @@ reviewsRouter.post("/", validateCreateReview, ReviewsController.createReview);
 
 reviewsRouter.get("/", ReviewsController.fetchReviews);
 
-// reviewsRouter.get("/", ReviewsController.getReview);
-
 module.exports = reviewsRouter;

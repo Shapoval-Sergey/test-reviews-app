@@ -9,13 +9,14 @@ const createReview = async (req, res, next) => {
   const { body } = req;
 
   try {
-    const review = await reviewsService.createReview(body);
+    const newReview = await reviewsService.createReview(body);
 
-    if (review) {
+    if (newReview) {
+      const currentReview = await reviewsService.getReviewById(newReview._id);
       return res.status(HttpCode.CREATED).json({
         status: "success",
         code: HttpCode.CREATED,
-        review,
+        currentReview,
       });
     }
   } catch (e) {

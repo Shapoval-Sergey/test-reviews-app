@@ -19,11 +19,21 @@ class ReviewsService {
   }
 
   async createReview({ name, descr }) {
-    const newProject = await this.repositories.review.createNewReview({
+    const newReview = await this.repositories.review.createNewReview({
       name,
       descr,
     });
-    return newProject;
+
+    return newReview;
+  }
+
+  async getReviewById(id) {
+    try {
+      const result = await this.repositories.review.getReview(id);
+      return result;
+    } catch (e) {
+      throw new Error("No review with such ID");
+    }
   }
 }
 
